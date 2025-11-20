@@ -14,7 +14,412 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      alerts: {
+        Row: {
+          alert_type: string | null
+          created_at: string | null
+          id: string
+          message: string
+          municipality_id: string | null
+          title: string
+        }
+        Insert: {
+          alert_type?: string | null
+          created_at?: string | null
+          id?: string
+          message: string
+          municipality_id?: string | null
+          title: string
+        }
+        Update: {
+          alert_type?: string | null
+          created_at?: string | null
+          id?: string
+          message?: string
+          municipality_id?: string | null
+          title?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "alerts_municipality_id_fkey"
+            columns: ["municipality_id"]
+            isOneToOne: false
+            referencedRelation: "municipalities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      bin_requests: {
+        Row: {
+          created_at: string | null
+          id: string
+          image_url: string | null
+          latitude: number | null
+          location: string
+          longitude: number | null
+          name: string
+          reason: string
+          status: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          id?: string
+          image_url?: string | null
+          latitude?: number | null
+          location: string
+          longitude?: number | null
+          name: string
+          reason: string
+          status?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          id?: string
+          image_url?: string | null
+          latitude?: number | null
+          location?: string
+          longitude?: number | null
+          name?: string
+          reason?: string
+          status?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      bins: {
+        Row: {
+          bin_code: string
+          created_at: string | null
+          fill_level: number | null
+          id: string
+          last_collection: string | null
+          latitude: number | null
+          location: string
+          longitude: number | null
+          municipality_id: string | null
+          status: string | null
+        }
+        Insert: {
+          bin_code: string
+          created_at?: string | null
+          fill_level?: number | null
+          id?: string
+          last_collection?: string | null
+          latitude?: number | null
+          location: string
+          longitude?: number | null
+          municipality_id?: string | null
+          status?: string | null
+        }
+        Update: {
+          bin_code?: string
+          created_at?: string | null
+          fill_level?: number | null
+          id?: string
+          last_collection?: string | null
+          latitude?: number | null
+          location?: string
+          longitude?: number | null
+          municipality_id?: string | null
+          status?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "bins_municipality_id_fkey"
+            columns: ["municipality_id"]
+            isOneToOne: false
+            referencedRelation: "municipalities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      challenges: {
+        Row: {
+          challenge_type: string | null
+          created_at: string | null
+          description: string | null
+          end_date: string | null
+          id: string
+          reward_cash: number | null
+          reward_xp: number | null
+          start_date: string | null
+          target_value: number
+          title: string
+        }
+        Insert: {
+          challenge_type?: string | null
+          created_at?: string | null
+          description?: string | null
+          end_date?: string | null
+          id?: string
+          reward_cash?: number | null
+          reward_xp?: number | null
+          start_date?: string | null
+          target_value: number
+          title: string
+        }
+        Update: {
+          challenge_type?: string | null
+          created_at?: string | null
+          description?: string | null
+          end_date?: string | null
+          id?: string
+          reward_cash?: number | null
+          reward_xp?: number | null
+          start_date?: string | null
+          target_value?: number
+          title?: string
+        }
+        Relationships: []
+      }
+      contact_requests: {
+        Row: {
+          created_at: string | null
+          email: string
+          id: string
+          is_urgent: boolean | null
+          message: string
+          municipality_id: string | null
+          name: string
+          status: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          email: string
+          id?: string
+          is_urgent?: boolean | null
+          message: string
+          municipality_id?: string | null
+          name: string
+          status?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          email?: string
+          id?: string
+          is_urgent?: boolean | null
+          message?: string
+          municipality_id?: string | null
+          name?: string
+          status?: string | null
+          user_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "contact_requests_municipality_id_fkey"
+            columns: ["municipality_id"]
+            isOneToOne: false
+            referencedRelation: "municipalities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      deposits: {
+        Row: {
+          bin_id: string | null
+          carbon_offset_kg: number | null
+          created_at: string | null
+          id: string
+          material_type: string
+          reward_amount: number
+          user_id: string | null
+          weight_kg: number
+          xp_earned: number | null
+        }
+        Insert: {
+          bin_id?: string | null
+          carbon_offset_kg?: number | null
+          created_at?: string | null
+          id?: string
+          material_type: string
+          reward_amount: number
+          user_id?: string | null
+          weight_kg: number
+          xp_earned?: number | null
+        }
+        Update: {
+          bin_id?: string | null
+          carbon_offset_kg?: number | null
+          created_at?: string | null
+          id?: string
+          material_type?: string
+          reward_amount?: number
+          user_id?: string | null
+          weight_kg?: number
+          xp_earned?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "deposits_bin_id_fkey"
+            columns: ["bin_id"]
+            isOneToOne: false
+            referencedRelation: "bins"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      incident_reports: {
+        Row: {
+          created_at: string | null
+          description: string | null
+          id: string
+          image_url: string | null
+          incident_type: string
+          latitude: number | null
+          location: string
+          longitude: number | null
+          status: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          incident_type: string
+          latitude?: number | null
+          location: string
+          longitude?: number | null
+          status?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string | null
+          description?: string | null
+          id?: string
+          image_url?: string | null
+          incident_type?: string
+          latitude?: number | null
+          location?: string
+          longitude?: number | null
+          status?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
+      municipalities: {
+        Row: {
+          address: string | null
+          created_at: string | null
+          email: string
+          hotline: string
+          id: string
+          logo_url: string | null
+          name: string
+          registration_id: string
+        }
+        Insert: {
+          address?: string | null
+          created_at?: string | null
+          email: string
+          hotline: string
+          id?: string
+          logo_url?: string | null
+          name: string
+          registration_id: string
+        }
+        Update: {
+          address?: string | null
+          created_at?: string | null
+          email?: string
+          hotline?: string
+          id?: string
+          logo_url?: string | null
+          name?: string
+          registration_id?: string
+        }
+        Relationships: []
+      }
+      profiles: {
+        Row: {
+          avatar_url: string | null
+          created_at: string | null
+          eco_level: string | null
+          id: string
+          is_collector: boolean | null
+          municipality_id: string | null
+          name: string
+          phone: string | null
+          updated_at: string | null
+          wallet_balance: number | null
+          xp_points: number | null
+        }
+        Insert: {
+          avatar_url?: string | null
+          created_at?: string | null
+          eco_level?: string | null
+          id: string
+          is_collector?: boolean | null
+          municipality_id?: string | null
+          name: string
+          phone?: string | null
+          updated_at?: string | null
+          wallet_balance?: number | null
+          xp_points?: number | null
+        }
+        Update: {
+          avatar_url?: string | null
+          created_at?: string | null
+          eco_level?: string | null
+          id?: string
+          is_collector?: boolean | null
+          municipality_id?: string | null
+          name?: string
+          phone?: string | null
+          updated_at?: string | null
+          wallet_balance?: number | null
+          xp_points?: number | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "profiles_municipality_id_fkey"
+            columns: ["municipality_id"]
+            isOneToOne: false
+            referencedRelation: "municipalities"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
+      waste_collectors: {
+        Row: {
+          address: string
+          approved_at: string | null
+          collector_type: string | null
+          created_at: string | null
+          id: string
+          id_document: string
+          schedule: string | null
+          status: string | null
+          user_id: string | null
+        }
+        Insert: {
+          address: string
+          approved_at?: string | null
+          collector_type?: string | null
+          created_at?: string | null
+          id?: string
+          id_document: string
+          schedule?: string | null
+          status?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          address?: string
+          approved_at?: string | null
+          collector_type?: string | null
+          created_at?: string | null
+          id?: string
+          id_document?: string
+          schedule?: string | null
+          status?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
