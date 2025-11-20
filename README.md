@@ -1,389 +1,308 @@
 EcoCitizen Hub
 Smart Municipal Recycling Deposit & Incentive Platform
 
-Next.js · Supabase · Tailwind · ShadCN UI · Framer Motion
+Next.js · Supabase · TailwindCSS · ShadCN UI · Framer Motion
 Live Deployment: https://ecocitizen-hub.vercel.app
 
 Executive Summary
 
-EcoCitizen Hub is a next-generation Smart City web application designed to modernize municipal waste management through intelligent recycling incentives, citizen engagement, and sustainability impact tracking.
-This platform combines advanced UI/UX design, robust backend architecture, and real-time municipal integration to deliver a production-ready MVP capable of scaling to full nationwide deployments.
+EcoCitizen Hub is a next-generation Smart City platform designed to modernize municipal waste management through intelligent recycling incentives, citizen engagement, and sustainability tracking.
+Built as a premium, production-grade MVP, it is architected for real municipal deployments, nationwide scalability, and modern user experience standards.
 
-EcoCitizen Hub empowers municipalities to:
+📌 Features Overview
+1. Authentication & Profiles
 
-Increase recycling participation
-
-Improve waste collector efficiency
-
-Reduce landfill and ocean-bound pollution
-
-Engage citizens via gamified incentives
-
-Track sustainability impact aligned with the UN Sustainable Development Goals (SDGs)
-
-Table of Contents
-
-Core Capabilities
-
-Unique Features
-
-SDG Support
-
-Contact & Request System
-
-Technology Stack
-
-System Architecture
-
-Database Schema
-
-Development Guide
-
-Deployment Guide
-
-Roadmap
-
-License
-
-Core Capabilities
-🔐 1. Supabase Authentication & Profiles
-
-Email/password authentication
+Email/password login
 
 Optional phone OTP
 
-Automatic profile generation on signup
+Automatic profile creation
 
-Profile data stored:
+Stored fields:
 
-Full name
+Name
 
-Phone number
+Phone
 
-Municipality assignment
+Municipality
 
 Wallet balance
 
-is_collector permission flag
+is_collector flag
 
-🏛️ 2. Municipality Integration
+2. Municipality Integration
 
-Full integration with municipal waste management environments:
+Displays municipality name, logo, hotline, and registration ID
 
-Dynamic municipal header with:
-✔ Municipality name
-✔ Official logo
-✔ Registration ID
-✔ Hotline
-
-Displayed message:
+Header message:
 “You are currently operating under: [Municipality] Waste Management Services.”
 
-Municipal data sourced from municipalities table
+User assigned to municipality during onboarding
 
-Assigned during onboarding and enforced across UI state
+All info loaded from the municipalities table
 
-♻️ 3. Recycling Deposit Simulation
+3. Deposit Simulation System
 
-Production-ready MVP for validating deposit workflows:
+Scan bin QR or manually enter bin code
 
-Scan bin QR code or enter bin ID
+Simulated:
 
-Simulated weight, material type, classification
+Weight
 
-All deposits stored in deposits table
+Material type
 
-Wallet auto-updates
+Classification
 
-XP + Carbon savings calculated
+Deposit saved to deposits table
 
-Success animation with premium micro-interactions
+Wallet balance + XP auto-updated
 
-🚛 4. Waste Collector Registration
+Carbon offset calculated
 
-A structured registration pathway for municipal-approved waste collectors:
+Animated success modal
 
-Form captures:
+4. Waste Collector Registration
 
-Legal identity
+Citizens can apply to become collectors
+
+Fields include:
+
+Identity number
 
 Address
 
-Collector schedule
+Schedule
 
 Collector type
 
 Data stored in waste_collectors
 
-Profile transitions to is_collector = true
+Profile updated → is_collector = true
 
-Collector dashboard unlocked
+Unlocks collector dashboard
 
-Unique Features
-🌱 Eco-Level XP System
+🌟 Unique Platform Features
+Eco-Level XP System
 
-Gamified progression with roles such as:
+Gamified recycling experience with levels such as:
 Eco Rookie → Green Guardian → Planet Protector → Earth Champion
 
-XP earned through:
+Impact Visualizer Globe
 
-Deposits
+3D-style environmental dashboard showing:
 
-Challenges
+Waste removed
 
-Community events
+CO₂ saved
 
-🌍 Impact Visualizer Globe
+Marine impact
 
-A 3D-inspired sustainability tracker with metrics:
+Smart Recommendation Engine
 
-Total waste removed
-
-CO₂ offset
-
-Ocean plastic reduction
-
-🧠 Smart Recommendation Engine
-
-Algorithmic suggestions based on activity:
+Recommends:
 
 Nearest bins
 
-Busiest recycling points
+Busiest deposit points
 
-Highest-reward materials
+Highest reward materials
 
-👥 Squad Mode & Community Challenges
+Community Challenges & Squad Mode
 
-Weekly Eco-Challenges
+Weekly challenges
 
-Squad teaming system
+Municipal leaderboards
 
-Municipality-vs-municipality rankings
+Squads and team competitions
 
-Leaderboards with XP integration
+Municipal Alerts System
 
-🚨 Municipal Alerts / Admin Broadcasts
+Admin broadcast tools for:
 
-Official communication module for:
+Events
 
-City events
-
-Emergency waste advisories
+Waste updates
 
 Community notifications
 
-🤖 AI Eco-Coach (Rules-Based)
+AI Eco-Coach (MVP)
 
-Provides personalized recycling tips based on user behavior.
+Rules-based personalized tips based on user activity.
 
-🏙 Environmental Scorecard
+Environmental Scorecard for Municipalities
 
-Benchmarks municipalities across:
+Compares waste performance across regions.
 
-Waste recovery rates
+Citizen of the Month Highlight
 
-Citizen participation levels
+Recognizes top eco-performers.
 
-Carbon impact
+Bin Health Indicator
 
-🌟 Citizen of the Month
-
-Automated recognition for top recyclers.
-
-🗑 Bin Health Indicator
-
-Realtime-style statuses:
+Bins show statuses:
 Available · Near Full · Full · Offline
 
-🌡 Carbon Offset Meter
+Carbon Offset Meter
 
-Instant calculation of emissions avoided.
+Displays CO₂ savings per user based on recycling activity.
 
-SDG Support
+🟦 UN Sustainable Development Goals (SDGs)
 
-EcoCitizen Hub supports the following United Nations Sustainable Development Goals:
+EcoCitizen Hub directly supports these SDGs:
 
-SDG 1 – No Poverty
+Goal	Description
+SDG 1	No Poverty – Income through recycling incentives
+SDG 8	Decent Work & Economic Growth – Waste collector jobs
+SDG 11	Sustainable Cities & Communities
+SDG 12	Responsible Consumption & Production
+SDG 13	Climate Action
+SDG 14	Life Below Water – Reduced marine plastics
+SDG 15	Life on Land – Less land pollution
 
-SDG 8 – Decent Work & Economic Growth
+Visible in:
 
-SDG 11 – Sustainable Cities & Communities
+Welcome page
 
-SDG 12 – Responsible Consumption & Production
+About page
 
-SDG 13 – Climate Action
+Clean responsive SDG grid with icons
 
-SDG 14 – Life Below Water
+📞 Contact & Request System
+1. Contact Municipality
 
-SDG 15 – Life on Land
+Stored in: contact_requests
 
-Presented in:
+Auto-loads municipal hotline
 
-SDG Welcome Section
-
-About Page
-
-Icon-based responsive grid
-
-Contact & Request System
-📞 Contact Municipality
-
-Loads hotline dynamically
-
-General inquiry form
-
-Stores in contact_requests
+Email-style message form
 
 “Urgent Waste Issue” toggle
 
-🗳 Request a Smart Bin
+2. Request a Smart Bin
 
-Stored in bin_requests:
+Stored in: bin_requests
 
-Full name
+Fields:
 
-GPS / address
+Name
 
-Justification text
+Address / GPS
 
-Optional image upload
+Reason for request
 
-Municipal tracking tools included
+Optional photo upload
 
-🚯 Report Illegal Dumping / Overflow
+3. Report Illegal Dumping / Overflow
 
-Stored in incident_reports:
+Stored in: incident_reports
 
-Image upload
+Includes:
+
+Photo upload
 
 Auto-geolocation
 
-Notes field
+Description field
 
-Incident map with seeded test data
+Incident map with seeded markers
 
-Technology Stack
+🧱 Tech Stack
 Layer	Technology
-Frontend Framework	Next.js (App Router)
-UI Layer	TailwindCSS + ShadCN UI
-Animation	Framer Motion
-Backend-as-a-Service	Supabase (Auth, DB, Storage)
-Deployment	Vercel
-Mapping	Lightweight JS map placeholder + sample GeoJSON
-System Architecture
-High-Level Flow
+Framework	Next.js (App Router)
+Styling	TailwindCSS + ShadCN UI
+Animations	Framer Motion
+Backend	Supabase (Auth, Database, Storage)
+Hosting	Vercel
+Maps	Placeholder + seeded location data
+📁 Project Structure
+/app
+  /auth
+  /dashboard
+  /deposit
+  /collector
+  /bins
+  /challenges
+  /contact
+  /about
+  /sdgs
+  /api
 
-Authentication (Supabase)
+/components
+  /ui
+  /municipality
+  /dashboard
+  /impact
+  /eco
+  /maps
 
-Profile initialization
+/lib
+  supabaseClient.ts
+  hooks/
+  utils/
+  xp/
+  carbon/
 
-Municipality assignment
-
-Access to:
-
-Dashboard
-
-Deposit system
-
-Collector workflows
-
-Challenges
-
-Contact & reporting services
-
-Architecture Principles
-
-Modular component-driven UI
-
-Serverless backend
-
-Optimized for Vercel edge deployment
-
-Hardened security via Supabase RLS policies
-
-Scalable municipal expansion model
-
-Database Schema
-
-Core Tables:
-
+🗄 Database Tables
 profiles
 municipalities
 bins
 deposits
 waste_collectors
-
-
-Engagement/Tiers:
-
 challenges
 squads
 alerts
-
-
-Community & Support:
-
 contact_requests
 bin_requests
 incident_reports
 
 
-All tables include:
+All tables include role-level security (RLS).
 
-Soft-deletion compatible fields
-
-Foreign keys
-
-RLS policies for secure multi-tenant municipalities
-
-Development Guide
-📦 Installation
-git clone https://github.com/yourrepo/ecocitizen-hub.git
+⚙️ Local Development Setup
+1. Clone the repository
+git clone https://github.com/yourusername/ecocitizen-hub.git
 cd ecocitizen-hub
+
+2. Install dependencies
 npm install
 
-🔧 Environment Variables
-
-Create .env.local:
-
+3. Create .env.local
 NEXT_PUBLIC_SUPABASE_URL=
 NEXT_PUBLIC_SUPABASE_ANON_KEY=
 SUPABASE_SERVICE_ROLE_KEY=
 
-▶ Local Development
+4. Start development server
 npm run dev
 
-Deployment Guide (Vercel)
+🚀 Deployment (Vercel)
 
-Push repository to GitHub
-
-Import project in Vercel
+Connect the GitHub repo to Vercel
 
 Add Supabase environment variables
 
-Select Next.js App Router preset
+Select the Next.js template
 
 Deploy
 
-Deployment completes in seconds due to serverless architecture.
+Vercel will handle building and edge optimization automatically
 
-Roadmap
-Future Enhancements
+🧭 Roadmap
 
-AI-powered material recognition (CV model)
+Real IoT bin sensor integration
 
-IoT integration for live bin sensors
+AI model for material recognition (computer vision)
 
-Native mobile app (PWA or React Native)
+Advanced carbon analytics
 
-Carbon credit marketplace integration
+Mobile PWA app
 
 Multi-language support
 
-NFC card scanning for deposits
+Municipality admin CMS
 
-License
+NFC card scanning
+
+📄 License
 
 © 2025 EcoCitizen Hub. All rights reserved.
-Open licensing available upon request based on deployment model.
+License options available depending on deployment model.
