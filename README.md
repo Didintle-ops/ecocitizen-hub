@@ -1,73 +1,389 @@
-# Welcome to your Lovable project
+EcoCitizen Hub
+Smart Municipal Recycling Deposit & Incentive Platform
 
-## Project info
+Next.js · Supabase · Tailwind · ShadCN UI · Framer Motion
+Live Deployment: https://ecocitizen-hub.vercel.app
 
-**URL**: https://lovable.dev/projects/e6654f00-c30d-46b9-9b63-3ccaa9c70ed7
+Executive Summary
 
-## How can I edit this code?
+EcoCitizen Hub is a next-generation Smart City web application designed to modernize municipal waste management through intelligent recycling incentives, citizen engagement, and sustainability impact tracking.
+This platform combines advanced UI/UX design, robust backend architecture, and real-time municipal integration to deliver a production-ready MVP capable of scaling to full nationwide deployments.
 
-There are several ways of editing your application.
+EcoCitizen Hub empowers municipalities to:
 
-**Use Lovable**
+Increase recycling participation
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/e6654f00-c30d-46b9-9b63-3ccaa9c70ed7) and start prompting.
+Improve waste collector efficiency
 
-Changes made via Lovable will be committed automatically to this repo.
+Reduce landfill and ocean-bound pollution
 
-**Use your preferred IDE**
+Engage citizens via gamified incentives
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Track sustainability impact aligned with the UN Sustainable Development Goals (SDGs)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Table of Contents
 
-Follow these steps:
+Core Capabilities
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Unique Features
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+SDG Support
 
-# Step 3: Install the necessary dependencies.
-npm i
+Contact & Request System
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+Technology Stack
+
+System Architecture
+
+Database Schema
+
+Development Guide
+
+Deployment Guide
+
+Roadmap
+
+License
+
+Core Capabilities
+🔐 1. Supabase Authentication & Profiles
+
+Email/password authentication
+
+Optional phone OTP
+
+Automatic profile generation on signup
+
+Profile data stored:
+
+Full name
+
+Phone number
+
+Municipality assignment
+
+Wallet balance
+
+is_collector permission flag
+
+🏛️ 2. Municipality Integration
+
+Full integration with municipal waste management environments:
+
+Dynamic municipal header with:
+✔ Municipality name
+✔ Official logo
+✔ Registration ID
+✔ Hotline
+
+Displayed message:
+“You are currently operating under: [Municipality] Waste Management Services.”
+
+Municipal data sourced from municipalities table
+
+Assigned during onboarding and enforced across UI state
+
+♻️ 3. Recycling Deposit Simulation
+
+Production-ready MVP for validating deposit workflows:
+
+Scan bin QR code or enter bin ID
+
+Simulated weight, material type, classification
+
+All deposits stored in deposits table
+
+Wallet auto-updates
+
+XP + Carbon savings calculated
+
+Success animation with premium micro-interactions
+
+🚛 4. Waste Collector Registration
+
+A structured registration pathway for municipal-approved waste collectors:
+
+Form captures:
+
+Legal identity
+
+Address
+
+Collector schedule
+
+Collector type
+
+Data stored in waste_collectors
+
+Profile transitions to is_collector = true
+
+Collector dashboard unlocked
+
+Unique Features
+🌱 Eco-Level XP System
+
+Gamified progression with roles such as:
+Eco Rookie → Green Guardian → Planet Protector → Earth Champion
+
+XP earned through:
+
+Deposits
+
+Challenges
+
+Community events
+
+🌍 Impact Visualizer Globe
+
+A 3D-inspired sustainability tracker with metrics:
+
+Total waste removed
+
+CO₂ offset
+
+Ocean plastic reduction
+
+🧠 Smart Recommendation Engine
+
+Algorithmic suggestions based on activity:
+
+Nearest bins
+
+Busiest recycling points
+
+Highest-reward materials
+
+👥 Squad Mode & Community Challenges
+
+Weekly Eco-Challenges
+
+Squad teaming system
+
+Municipality-vs-municipality rankings
+
+Leaderboards with XP integration
+
+🚨 Municipal Alerts / Admin Broadcasts
+
+Official communication module for:
+
+City events
+
+Emergency waste advisories
+
+Community notifications
+
+🤖 AI Eco-Coach (Rules-Based)
+
+Provides personalized recycling tips based on user behavior.
+
+🏙 Environmental Scorecard
+
+Benchmarks municipalities across:
+
+Waste recovery rates
+
+Citizen participation levels
+
+Carbon impact
+
+🌟 Citizen of the Month
+
+Automated recognition for top recyclers.
+
+🗑 Bin Health Indicator
+
+Realtime-style statuses:
+Available · Near Full · Full · Offline
+
+🌡 Carbon Offset Meter
+
+Instant calculation of emissions avoided.
+
+SDG Support
+
+EcoCitizen Hub supports the following United Nations Sustainable Development Goals:
+
+SDG 1 – No Poverty
+
+SDG 8 – Decent Work & Economic Growth
+
+SDG 11 – Sustainable Cities & Communities
+
+SDG 12 – Responsible Consumption & Production
+
+SDG 13 – Climate Action
+
+SDG 14 – Life Below Water
+
+SDG 15 – Life on Land
+
+Presented in:
+
+SDG Welcome Section
+
+About Page
+
+Icon-based responsive grid
+
+Contact & Request System
+📞 Contact Municipality
+
+Loads hotline dynamically
+
+General inquiry form
+
+Stores in contact_requests
+
+“Urgent Waste Issue” toggle
+
+🗳 Request a Smart Bin
+
+Stored in bin_requests:
+
+Full name
+
+GPS / address
+
+Justification text
+
+Optional image upload
+
+Municipal tracking tools included
+
+🚯 Report Illegal Dumping / Overflow
+
+Stored in incident_reports:
+
+Image upload
+
+Auto-geolocation
+
+Notes field
+
+Incident map with seeded test data
+
+Technology Stack
+Layer	Technology
+Frontend Framework	Next.js (App Router)
+UI Layer	TailwindCSS + ShadCN UI
+Animation	Framer Motion
+Backend-as-a-Service	Supabase (Auth, DB, Storage)
+Deployment	Vercel
+Mapping	Lightweight JS map placeholder + sample GeoJSON
+System Architecture
+High-Level Flow
+
+Authentication (Supabase)
+
+Profile initialization
+
+Municipality assignment
+
+Access to:
+
+Dashboard
+
+Deposit system
+
+Collector workflows
+
+Challenges
+
+Contact & reporting services
+
+Architecture Principles
+
+Modular component-driven UI
+
+Serverless backend
+
+Optimized for Vercel edge deployment
+
+Hardened security via Supabase RLS policies
+
+Scalable municipal expansion model
+
+Database Schema
+
+Core Tables:
+
+profiles
+municipalities
+bins
+deposits
+waste_collectors
+
+
+Engagement/Tiers:
+
+challenges
+squads
+alerts
+
+
+Community & Support:
+
+contact_requests
+bin_requests
+incident_reports
+
+
+All tables include:
+
+Soft-deletion compatible fields
+
+Foreign keys
+
+RLS policies for secure multi-tenant municipalities
+
+Development Guide
+📦 Installation
+git clone https://github.com/yourrepo/ecocitizen-hub.git
+cd ecocitizen-hub
+npm install
+
+🔧 Environment Variables
+
+Create .env.local:
+
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
+SUPABASE_SERVICE_ROLE_KEY=
+
+▶ Local Development
 npm run dev
-```
 
-**Edit a file directly in GitHub**
+Deployment Guide (Vercel)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Push repository to GitHub
 
-**Use GitHub Codespaces**
+Import project in Vercel
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Add Supabase environment variables
 
-## What technologies are used for this project?
+Select Next.js App Router preset
 
-This project is built with:
+Deploy
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Deployment completes in seconds due to serverless architecture.
 
-## How can I deploy this project?
+Roadmap
+Future Enhancements
 
-Simply open [Lovable](https://lovable.dev/projects/e6654f00-c30d-46b9-9b63-3ccaa9c70ed7) and click on Share -> Publish.
+AI-powered material recognition (CV model)
 
-## Can I connect a custom domain to my Lovable project?
+IoT integration for live bin sensors
 
-Yes, you can!
+Native mobile app (PWA or React Native)
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Carbon credit marketplace integration
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Multi-language support
+
+NFC card scanning for deposits
+
+License
+
+© 2025 EcoCitizen Hub. All rights reserved.
+Open licensing available upon request based on deployment model.
