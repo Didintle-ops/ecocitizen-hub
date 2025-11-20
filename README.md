@@ -3,7 +3,7 @@ Smart Municipal Recycling Deposit & Incentive Platform
 
 <p align="center">
   <img src="<img width="1239" height="664" alt="image" src="https://github.com/user-attachments/assets/1fc344db-86ed-4b73-8e6f-d1fac8cd60cc" />
- " alt="EcoCitizen Hub Preview" width="300"/>
+ " alt="EcoCitizen Hub Preview" width="100"/>
 </p>
 
 Next.js · Supabase · TailwindCSS · ShadCN UI · Framer Motion
