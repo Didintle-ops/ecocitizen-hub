@@ -260,7 +260,7 @@ All tables include role-level security (RLS).
 
 ⚙️ Local Development Setup
 1. Clone the repository
-git clone https://github.com/yourusername/ecocitizen-hub.git
+git clone https://github.com/Didintle-ops/ecocitizen-hub.git
 cd ecocitizen-hub
 
 2. Install dependencies
