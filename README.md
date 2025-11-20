@@ -1,10 +1,9 @@
 EcoCitizen Hub
 Smart Municipal Recycling Deposit & Incentive Platform
 
-<p align="center">
-  <img src="./public/<img width="1239" height="664" alt="image" src="https://github.com/user-attachments/assets/1fc344db-86ed-4b73-8e6f-d1fac8cd60cc" />
- " alt="EcoCitizen Hub Preview" width="100"/>
-</p>
+<img src="<img width="1239" height="664" alt="image" src="https://github.com/user-attachments/assets/386edd94-857e-4965-99f9-b4d82f31741f" />
+" width="300" alt="Screenshot" />
+
 
 Next.js · Supabase · TailwindCSS · ShadCN UI · Framer Motion
 Live Deployment: https://ecocitizen-hub.vercel.app
