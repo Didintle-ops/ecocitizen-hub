@@ -1,10 +1,10 @@
 EcoCitizen Hub
 Smart Municipal Recycling Deposit & Incentive Platform
 
-<img src="<img width="300" height="250" alt="image" src="https://github.com/user-attachments/assets/386edd94-857e-4965-99f9-b4d82f31741f" />
+<img src="<img width="500" height="450" alt="image" src="https://github.com/user-attachments/assets/386edd94-857e-4965-99f9-b4d82f31741f" />
 
 
-<img src="<img width="300" height="250" alt="image" src="https://github.com/user-attachments/assets/35759cc9-ea13-48fe-a114-712c2d9ec1dd" />
+"<img width="500" height="450" alt="image" src="https://github.com/user-attachments/assets/35759cc9-ea13-48fe-a114-712c2d9ec1dd" />
 
 
 
